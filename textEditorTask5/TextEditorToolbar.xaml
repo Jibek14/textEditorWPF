@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="textEditorTask5.TextEditorToolbar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:textEditorTask5"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             Loaded="UserControl_Loaded">
+    <ToolBarTray x:Name="Top" 
+                 DockPanel.Dock="Top">
+        <ToolBar>
+            <Button x:Name="_Open" ToolTip="Open">
+                <Image Source="icons/open50px.png"/>
+            </Button>
+            <Button x:Name="_Save" ToolTip="Save">
+                <Image Source="icons/save50px.png"/>
+            </Button>
+            <Button x:Name="_Cut" ToolTip="Cut">
+                <Image Source="icons/scissors50px.png"/>
+            </Button>
+            <Button x:Name="_Copy" ToolTip="Copy" Height="45" Width="45">
+                <Image Source="icons/copy.png"/>
+            </Button>
+            <Button x:Name="_Paste" ToolTip="Paste" Height="45" Width="45">
+                <Image Source="icons/paste.png"/>
+            </Button>
+        </ToolBar>
+        <ToolBar>
+            <ToggleButton x:Name="boldButton" 
+                           Command="EditingCommands.ToggleBold"
+                          ToolTip="Bold">
+                <Image Source="icons/bold2.png"/>
+            </ToggleButton>
+            <ToggleButton x:Name="italicButton" Command="EditingCommands.ToggleItalic"
+                          ToolTip="Italic">
+                <Image Source="icons/italic.png"/>
+            </ToggleButton>
+            <ToggleButton x:Name="underlineButton"
+                         Command="EditingCommands.ToggleUnderline"
+                         ToolTip="Underline">
+                <Image Source="icons/underline.png"/>
+            </ToggleButton>
+            <Separator/>
+            <ComboBox x:Name="fonts"
+                      MinWidth="120"
+                      ItemsSource="{x:Static Fonts.SystemFontFamilies}"
+                      ToolTip="Font"/>
+            <ComboBox x:Name="fontSize"
+                      MinWidth="50"
+                      ToolTip="Font Size"/>
+            <ComboBox x:Name="fontColor"
+                      MinWidth="100"
+                      ToolTip="Font Colour"/>
+        </ToolBar>
+    </ToolBarTray>
+</UserControl>
